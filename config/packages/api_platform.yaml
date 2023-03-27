@@ -1,0 +1,21 @@
+api_platform:
+    title: Hello API Platform
+    version: 1.0.0
+    # Mercure integration, remove if unwanted
+    mercure: ~
+    doctrine:
+        enabled: false
+    doctrine_mongodb_odm:
+        enabled: true
+    formats:
+        json:
+            mime_types: [ 'application/json' ]
+        html:
+            mime_types: [ 'text/html' ]
+    mapping:
+        paths: [ '%kernel.project_dir%/src/Document' ]
+    # Good cache defaults for REST APIs
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
